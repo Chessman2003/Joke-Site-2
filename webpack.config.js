@@ -20,7 +20,7 @@ const plugins = [
 module.exports = {
     mode,
     plugins,
-    entry: './src/index.tsx',
+    entry: './src/index.jsx',
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
