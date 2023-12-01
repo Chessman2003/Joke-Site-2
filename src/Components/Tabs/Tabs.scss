@@ -1,0 +1,47 @@
+.tabsHeader {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .tabsHeaderItem {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .tabHeaderItem:hover {
+    background-color: #ff4a4a;
+  }
+  
+  .tab-content {
+    min-height: 150px;
+  }
+  
+  .preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    font-size: 24px;
+    color: #007bff;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .preloader::before {
+    content: '⏳';
+    margin-right: 10px;
+    display: inline-block;
+    animation: spin 2s linear infinite;
+  }
+  
