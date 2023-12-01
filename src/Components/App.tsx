@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import Tabs from './Tabs';
+import Tabs from './Tabs/Tabs.jsx';
 
 
 const tabsData = [
