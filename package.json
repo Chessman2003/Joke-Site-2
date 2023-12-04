@@ -16,6 +16,7 @@
     "@babel/core": "^7.23.5",
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
+    "@pmmmwh/react-refresh-webpack-plugin": "github:pmmmwh/react-refresh-webpack-plugin",
     "@types/react": "^18.2.39",
     "@types/react-dom": "^18.2.17",
     "babel-loader": "^9.1.3",

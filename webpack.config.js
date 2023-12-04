@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractplugin = require('mini-css-extract-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 
 let mode = 'development';
@@ -16,6 +17,10 @@ const plugins = [
         filename: '[name].[contenthash].css',
     }),
 ];
+
+if (process.env.SERVE) { 
+    plugins.push(new ReactRefreshWebpackPlugin());
+  }
 
 module.exports = {
     mode,
