@@ -14,7 +14,8 @@ type Holder = {
 
 type Props = {
     getContent: (id: string) => JSX.Element
-    holderTabs: Holder[]
+    holderTabs: Holder[],
+    id: string
 }
 
 const Tabs = ({
