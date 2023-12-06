@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import JokesData from '../../model/emulateDate';
-import './Tabs.scss';
+
 import { TabsPanel } from '../TabsPanel/TabsPanel';
 import { TabContent } from '../TabContent/TabContent';
 
 import {TabHolderProps} from '../TabHolder/TabHolder'
 
+import './Tabs.scss';
 
-type Holder = {
+export type Holder = {
     id: string
     title: string
 }
 
 type Props = {
     getContent: (id: string) => JSX.Element
-    holderTabs: Holder[],
-    idSpec: string,
-    id: string
+    holderTabs: Holder[]
 }
 
-const Tabs = ({
+export const Tabs = ({
     holderTabs,
     getContent
 }: Props) => {
@@ -54,6 +52,3 @@ const Tabs = ({
         </div>  
     );
 };
-
-
-export default Tabs

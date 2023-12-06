@@ -1,0 +1,7 @@
+.tabHolder {
+    background-color: aquamarine;
+
+    &.selected {
+        background-color:darkseagreen;
+    }
+}

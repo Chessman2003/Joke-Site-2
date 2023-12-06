@@ -1,26 +1,26 @@
 import React from 'react';
-<<<<<<< HEAD:src/Components/App.jsx
-import Tabs from './Tabs/Tabs';
-=======
-import Tabs from './Tabs/Tabs.jsx';
->>>>>>> f211979731932378fb2fb25d919d2ec9088700db:src/Components/App.tsx
 
+import {EmulateData} from '../model/emulateData'
+import {Tabs, Holder} from './Tabs/Tabs';
+import {List} from './List/List';
 
-const tabsData = [
-  {id: 'all', title: 'Все анекдоты' },
-  {id: 'shtirlits', title: 'Про Штирлица' },
-  {id: 'sherlock', title: 'Про Шерлока'},
-  {id: 'developper', title: "Про программистов"}
+export const App = () => {
+  const emulator = new EmulateData();
+  const genres = emulator.getAllGenres();
+  const holders = genres.map(g => {
+    return {
+      id: g.getId(),
+      title: g.getTitle()
+    }
+  });
 
-];
-
-function App() {
   return (
     <div className="App">
       <h1>Анекдоты</h1>
-      <Tabs tabsData={tabsData} />
+      <Tabs 
+          holderTabs={holders} 
+          getContent={(id) => <List rows={emulator.getJokesByGenre(id)} />} 
+      />
     </div>
   );
 }
-
-export default App;

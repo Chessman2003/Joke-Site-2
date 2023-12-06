@@ -1,5 +1,7 @@
 import React from "react";
 
+import './TabHolder.scss'
+
 export type TabHolderProps = {
     id: string
     title: string
@@ -19,6 +21,6 @@ export const TabHolder = ({
     } 
 
     return (
-        <div className={newClassname} onClick={()=>{onChangeTab(id)}}>{title}</div>
+        <div className={newClassname} onClick={()=>{onChangeTab && onChangeTab(id)}}>{title}</div>
     )
 }

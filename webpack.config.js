@@ -1,8 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractplugin = require('mini-css-extract-plugin');
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-
 
 let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
@@ -25,7 +23,7 @@ if (process.env.SERVE) {
 module.exports = {
     mode,
     plugins,
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
