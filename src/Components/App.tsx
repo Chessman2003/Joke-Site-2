@@ -38,7 +38,7 @@ export const App = () => {
             if (id === catfactsHolderId) {
               return <CatFactsPage urlApi={'https://catfact.ninja/fact'} />
             } else if (id === dogfactsHolderId) {
-              return <DogFactsPage urlApi={'https://dog.ceo/api/breeds/image/random'}
+              return <DogFactsPage urlApi={'https://dog.ceo/api/breeds/image/random'} />
             }
             return <List rows={emulator.getJokesByGenre(id)} />
           }

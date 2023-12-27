@@ -22,7 +22,7 @@ export const CatFactsPage = ({
 
     const getNextFact = async () => {
         const nextFact = await catsLoader.getNextFact().catch(e => {
-            setError(alert);
+            setError(e+'');
         });
         setNextFact(nextFact)
     }

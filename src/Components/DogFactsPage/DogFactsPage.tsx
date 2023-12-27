@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { dogsFactsLoader } from '../lib/dogFactsLoader'
-import { dogFactsType, dogsFactsType } from '../lib/types/dogFacts'
+import React, { useEffect, useState } from 'react'
+import { DogsFactsLoader } from '../lib/dogFactsLoader'
+import { DogFactsType } from '../lib/types/dogFacts'
 
 import './DogFactsPage.scss'
 
@@ -9,20 +9,33 @@ type Props = {
 }
 
 export const DogFactsPage = ({urlApi}: Props) => {
-    const dogsLoader = new dogsFactsLoader(urlApi);
-    const [nextFact, setNextFact] = useState<dogFactsType>({
-        message: '',
+    const [loading, setLoading] = useState<boolean>(true);
+    const [nextFact, setNextFact] = useState<DogFactsType>({
+        message: null,
         status: ''
     });
 
-    const error = [error, setError] = useState<string>('');
+    const [error, setError] = useState<string>('');
 
     const getNextFact = async () => {
-        const nextFact = await dogsFactsLoader.getNextFact().catch(e => {
-            setError(alert);
+        const loader = new DogsFactsLoader(urlApi);
+        const nextFact = await loader.getNextFact().catch(e => {
+            setError(e+'');
         });
-        setNextFact(nextFact);
+        console.log(JSON.stringify(nextFact));
+        if (nextFact) {
+            setNextFact(nextFact);
+        }
+        setLoading(false);
     };
+
+    useEffect(()=>{
+        getNextFact()
+    }, []);
+
+    if (loading) {
+        return <div>Loading ...</div>
+    }
 
 
     if (error != '') {
@@ -33,15 +46,16 @@ export const DogFactsPage = ({urlApi}: Props) => {
 
     return(
         <div className="dogFactsWrapper">
-            <div className="buttonNext">
+            <div className="buttonNext" onClick={() => {
+                getNextFact();
+            }}>
                 <button>Next Fact</button>
             </div>
             <div className="fact">
-                <div>{nextFact.message}</div>
                 <div>{nextFact.status}</div>
-                <div>
-                    <img src={}
-                </div>
+                <div>{
+                    nextFact.message && <img src={nextFact.message.toString()}/>
+                }</div>
             </div>
         </div>
     )
