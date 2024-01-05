@@ -34,12 +34,12 @@ export const DogFactsPage = ({urlApi}: Props) => {
     }, []);
 
     if (loading) {
-        return <div>Loading ...</div>
+        return <div className={'loading'}>Loading ...</div>
     }
 
 
     if (error != '') {
-    return (<div>
+    return (<div className={'error'}>
         {error}
     </div>)
     }

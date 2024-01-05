@@ -6,7 +6,7 @@ import { List } from './List/List';
 
 import { CatFactsPage } from './CatFactsPage/CatFactsPage';
 import { DogFactsPage } from './DogFactsPage/DogFactsPage';
-import { NewApiPage } from './NewApiPage/NewApiPage'
+import { BoredActivityPage } from './BoredActivityPage/BoredActivityPage'
 
 export const App = () => {
   const emulator = new EmulateData();
@@ -47,7 +47,7 @@ export const App = () => {
           } else if (id === dogfactsHolderId) {
             return <DogFactsPage urlApi={'https://dog.ceo/api/breeds/image/random'} />
           } else (id === activitiesHolderId) {
-            return <NewApiPage url={'https://www.boredapi.com/api/activity'} />
+            return <BoredActivityPage url={'https://www.boredapi.com/api/activity'} />
           };
           return <List rows={emulator.getJokesByGenre(id)} />
         }

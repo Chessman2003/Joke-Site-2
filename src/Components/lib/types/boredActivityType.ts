@@ -1,4 +1,4 @@
-export type NewApiType = {
+export type BoredActivityType = {
     activity: string,
     type: string,
     participants: number,
@@ -6,4 +6,9 @@ export type NewApiType = {
     link: URL,
     key: string,
     accessibility: number
+}
+
+export type PartBoredActivityType = {
+    activity: string,
+    key: string,
 }
