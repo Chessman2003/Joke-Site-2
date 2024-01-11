@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import {CatFactsLoader} from '../lib/catFactsLoader'
-import {CatFactsType} from '../lib/types/catFacts'
-
+import { CatFactsLoader } from '../lib/catFactsLoader'
+import { CatFactsType } from '../lib/types/catFacts'
+import Button from "../Button/Button";
+import { DataDisplay } from "../DataDisplay/DataDisplay";
 import './CatFactsPage.scss'
 
 type Props = {
@@ -22,12 +23,12 @@ export const CatFactsPage = ({
 
     const getNextFact = async () => {
         const nextFact = await catsLoader.getNextFact().catch(e => {
-            setError(e+'');
+            setError(e + '');
         });
         setNextFact(nextFact)
     }
 
-    if (error != '')  {
+    if (error != '') {
         return (<div>
             {error}
         </div>)
@@ -35,13 +36,8 @@ export const CatFactsPage = ({
 
     return (
         <div className="catfactsWrapper">
-            <div className="buttonNext">
-                <button onClick={()=>{getNextFact()}}>Next Fact</button>
-            </div>
-            <div className="fact">
-                <div>{nextFact.fact}</div>
-                <div>{nextFact.length}</div>
-            </div>
+            <Button onClick={getNextFact} text={"Next Fact"} />
+            <DataDisplay first={nextFact.fact} second={nextFact.length}
         </div>
     )
 }
