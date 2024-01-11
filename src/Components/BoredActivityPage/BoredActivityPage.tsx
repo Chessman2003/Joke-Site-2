@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PartBoredActivityType } from '../lib/types/boredActivityType';
 import { getPartBoredActivity } from '../lib/getPartBoredActivity';
 import Button from '../Button/Button';
@@ -19,14 +19,10 @@ export const BoredActivityPage = ({ url }: Props) => {
 
     const [loading, setLoading] = useState<Boolean>(true)
     const loadNextObject = async () => {
-        const boredActivityItem = await getPartBoredActivity(url)
-            .catch(error => console.error(error))
-            .then(() => setActivityItem(activityItem))
-            .finally(() => {
-                setTimeout(() => {
-                    setLoading(false);
-                }, 2000);
-            })
+        getPartBoredActivity(url).then(item => {
+            setActivityItem(item);
+            setLoading(false);
+        });
     };
 
     useEffect(() => {

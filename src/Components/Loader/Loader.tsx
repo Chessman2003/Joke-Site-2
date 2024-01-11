@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Loader.scss';
 
 type Props = {
@@ -15,7 +15,7 @@ const Loader = ({ text }: Props) => {
         return (
             () => {
                 clearTimeout(timer);
-            };
+            }
         );
 
 }, []);

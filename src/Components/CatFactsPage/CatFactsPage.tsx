@@ -37,7 +37,7 @@ export const CatFactsPage = ({
     return (
         <div className="catfactsWrapper">
             <Button onClick={getNextFact} text={"Next Fact"} />
-            <DataDisplay first={nextFact.fact} second={nextFact.length}
+            <DataDisplay first={nextFact.fact} second={nextFact.length} />
         </div>
     )
 }

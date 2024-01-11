@@ -1,8 +1,8 @@
-import react from 'react';
+import React from 'react';
 import './Button.scss'
 
 type Props = {
-    onClick: MouseEventHendler<HTMLButtonElement>,
+    onClick: React.MouseEventHandler<HTMLButtonElement>,
     text: string
 };
 
