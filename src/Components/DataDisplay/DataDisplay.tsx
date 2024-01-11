@@ -1,13 +1,16 @@
 import react from 'react';
-import { PartBoredActivityType } from '../lib/types/boredActivityType';
-import './BoredActivityPage.scss'
+import './DataDisplay.scss'
 
+type Props = {
+    first: any,
+    second: any
+}
 
-export const DataDisplay = ({ activity, key }) => {
+export const DataDisplay = ({ first, second }: Props) => {
     return (
-        <div className="activities">
-            <div>{activity}</div>
-            <div>{key}</div>
+        <div className="displayItems">
+            <div>{first}</div>
+            <div>{second}</div>
         </div>
     );
 }

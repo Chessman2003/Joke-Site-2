@@ -17,7 +17,7 @@ export const BoredActivityPage = ({ url }: Props) => {
         key: ""
     })
 
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState<Boolean>(true)
     const loadNextObject = async () => {
         const boredActivityItem = await getPartBoredActivity(url)
             .catch(error => console.error(error))

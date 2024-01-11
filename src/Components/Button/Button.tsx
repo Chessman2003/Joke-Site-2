@@ -9,7 +9,7 @@ type Props = {
 const Button = ({ onClick, text }: Props) => {
     return (
         <div className="buttonNext">
-            <button className='button' onClick={OnClick}>{text}</button>
+            <button className='button' onClick={onClick}>{text}</button>
         </div>
     );
 };
