@@ -19,10 +19,10 @@ export const BoredActivityPage = ({ url }: Props) => {
 
     const [loading, setLoading] = useState<Boolean>(true)
     const loadNextObject = async () => {
-        getPartBoredActivity(url).then(item => {
-            setActivityItem(item);
-            setLoading(false);
-        });
+        const item = await getPartBoredActivity(url);
+
+        setActivityItem(item);
+        setLoading(false);
     };
 
     useEffect(() => {
