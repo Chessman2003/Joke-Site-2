@@ -3,10 +3,10 @@ import React from 'react';
 import { EmulateData } from '../model/emulateData'
 import { Tabs, Holder } from './Tabs/Tabs';
 import { List } from './List/List';
-
+import { WrapperPageActivity } from './WrapperPageActivity/WrapperPageActivity';
 import { CatFactsPage } from './CatFactsPage/CatFactsPage';
 import { DogFactsPage } from './DogFactsPage/DogFactsPage';
-import { BoredActivityPage } from './BoredActivityPage/BoredActivityPage'
+
 
 export const App = () => {
   const emulator = new EmulateData();
@@ -47,7 +47,7 @@ export const App = () => {
           } else if (id === dogfactsHolderId) {
             return <DogFactsPage urlApi={'https://dog.ceo/api/breeds/image/random'} />
           } else if (id === activitiesHolderId) {
-            return <BoredActivityPage url={'https://www.boredapi.com/api/activity'} />
+            return <WrapperPageActivity />
           };
           return <List rows={emulator.getJokesByGenre(id)} />
         }

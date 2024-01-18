@@ -6,7 +6,7 @@ type Props = {
     text: string
 };
 
-const Button = ({ onClick, text }: Props) => {
+export const Button = ({ onClick, text }: Props) => {
     return (
         <div className="buttonNext">
             <button className='button' onClick={onClick}>{text}</button>
@@ -14,4 +14,3 @@ const Button = ({ onClick, text }: Props) => {
     );
 };
 
-export default Button

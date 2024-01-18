@@ -9,7 +9,6 @@ type Props = {
 }
 
 export const DogFactsPage = ({urlApi}: Props) => {
-    const [loading, setLoading] = useState<boolean>(true);
     const [nextFact, setNextFact] = useState<DogFactsType>({
         message: null,
         status: ''
@@ -26,16 +25,13 @@ export const DogFactsPage = ({urlApi}: Props) => {
         if (nextFact) {
             setNextFact(nextFact);
         }
-        setLoading(false);
     };
 
     useEffect(()=>{
         getNextFact()
     }, []);
 
-    if (loading) {
-        return <div className={'loading'}>Loading ...</div>
-    }
+
 
 
     if (error != '') {
@@ -45,18 +41,11 @@ export const DogFactsPage = ({urlApi}: Props) => {
     }
 
     return(
-        <div className="dogFactsWrapper">
-            <div className="buttonNext" onClick={() => {
-                getNextFact();
-            }}>
-                <button>Next Fact</button>
-            </div>
-            <div className="fact">
+       
+            
                 <div>{nextFact.status}</div>
                 <div>{
                     nextFact.message && <img src={nextFact.message.toString()}/>
                 }</div>
-            </div>
-        </div>
     )
 }
