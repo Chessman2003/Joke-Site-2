@@ -41,7 +41,7 @@ export const DogFactsPage = ({urlApi}: Props) => {
     if (error != '') {
     return (<div className={'error'}>
         {error}
-    </div>)
+        </div>)
     }
 
     return(

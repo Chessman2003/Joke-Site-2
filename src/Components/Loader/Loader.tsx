@@ -6,7 +6,7 @@ type Props = {
 };
 
 
-const Loader = ({ text }: Props) => {
+export const Loader = ({ text }: Props) => {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -31,4 +31,3 @@ if (isLoading) {
 };
 };
 
-export default Loader
