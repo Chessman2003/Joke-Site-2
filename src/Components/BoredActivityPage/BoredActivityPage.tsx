@@ -32,3 +32,4 @@ export const BoredActivityPage = ({ url }: Props) => {
                     <div>{activityItem.key}</div>
     );
 }
+    

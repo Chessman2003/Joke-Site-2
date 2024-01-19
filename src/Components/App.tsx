@@ -1,11 +1,12 @@
 import React from 'react';
-
+import { WrapperPageDogs } from './WrapperPageDogs/WrapperPageDogs';
 import { EmulateData } from '../model/emulateData'
 import { Tabs, Holder } from './Tabs/Tabs';
 import { List } from './List/List';
 import { WrapperPageActivity } from './WrapperPageActivity/WrapperPageActivity';
 import { CatFactsPage } from './CatFactsPage/CatFactsPage';
 import { DogFactsPage } from './DogFactsPage/DogFactsPage';
+import { WrapperPageCats } from './WrapperPageCats/WrapperPageCats';
 
 
 export const App = () => {
@@ -43,9 +44,9 @@ export const App = () => {
         holderTabs={holders}
         getContent={(id) => {
           if (id === catfactsHolderId) {
-            return <CatFactsPage urlApi={'https://catfact.ninja/fact'} />
+            return <WrapperPageCats />
           } else if (id === dogfactsHolderId) {
-            return <DogFactsPage urlApi={'https://dog.ceo/api/breeds/image/random'} />
+            return <WrapperPageDogs />
           } else if (id === activitiesHolderId) {
             return <WrapperPageActivity />
           };

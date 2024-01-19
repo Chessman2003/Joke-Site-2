@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { CatFactsLoader } from '../lib/catFactsLoader'
 import { CatFactsType } from '../lib/types/catFacts'
-import Button from "../Button/Button";
-import { DataDisplay } from "../DataDisplay/DataDisplay";
 import './CatFactsPage.scss'
 
 type Props = {
@@ -35,9 +33,8 @@ export const CatFactsPage = ({
     }
 
     return (
-        <div className="catfactsWrapper">
-            <Button onClick={getNextFact} text={"Next Fact"} />
-            <DataDisplay first={nextFact.fact} second={nextFact.length} />
-        </div>
+        <div>{nextFact.fact}</div> 
+        <div>{nextFact.length}</div>
+        
     )
 }
