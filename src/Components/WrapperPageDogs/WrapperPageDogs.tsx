@@ -8,7 +8,7 @@ import { DisplayComponent } from '../DisplayComponent/DisplayComponent';
 export const WrapperPageDogs = () => {
     return (
         <ControlPanel>
-            <Button onClick={loadNextObject()} text='Следующая активность' />
+            <Button onClick={getNextFact()} text='Следующая активность' />
             <Button text='Какая-то кнопка' />
         </ControlPanel>
 
