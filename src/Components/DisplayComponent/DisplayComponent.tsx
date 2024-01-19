@@ -10,7 +10,7 @@ type DisplayComponentType = {
 export const DisplayComponent: React.FC<DisplayComponentType> = ({isLoading, children}) => {
     return (
         <div className="displayComponent">
-            {isLoading ? <Loader /> : children}
+            {isLoading ? <Loader text='Загружаю...' /> : children}
         </div>
     )
 }

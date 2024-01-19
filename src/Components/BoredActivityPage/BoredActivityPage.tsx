@@ -1,35 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { PartBoredActivityType } from '../lib/types/boredActivityType';
 import { getPartBoredActivity } from '../lib/getPartBoredActivity';
 
-
-
-
 type Props = {
-    url: string
+    activityItem: PartBoredActivityType
 };
 
-
-export const BoredActivityPage = ({ url }: Props) => {
-    const [activityItem, setActivityItem] = useState<PartBoredActivityType>({ 
-        activity: "",
-        key: ""
-    })
-
-    
-    const loadNextObject = async () => {
-        const item = await getPartBoredActivity(url);
-        setActivityItem(item);
-    };
-
-    useEffect(() => {
-        loadNextObject()
-    }, [url])
-
-   
+export const BoredActivityPage = ({ activityItem }: Props) => {   
     return (
-                    <div>{activityItem.activity}</div>
-                    <div>{activityItem.key}</div>
+        <>
+            <div>{activityItem.activity}</div>
+            <div>{activityItem.key}</div>
+        </>
     );
 }
     

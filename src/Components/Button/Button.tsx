@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.scss'
 
 type Props = {
-    onClick: React.MouseEventHandler<HTMLButtonElement>,
+    onClick: () => void,
     text: string
 };
 
