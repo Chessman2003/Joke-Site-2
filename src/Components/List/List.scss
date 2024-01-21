@@ -1,0 +1,26 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    list-style-type: none;
+    margin: 20px;
+    color: white;
+}
+
+li {
+    width: 400px;
+    margin-bottom: 20px;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(51, 49, 49);
+}
+
+li>div {
+    margin-bottom: 10px;
+}
+
+.header {
+    font-size: 20px
+}

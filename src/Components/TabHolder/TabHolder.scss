@@ -1,7 +1,11 @@
 .tabHolder {
-    background-color: aquamarine;
+    color: white;
 
     &.selected {
-        background-color:darkseagreen;
+        border-bottom: 3px solid yellow;
     }
+}
+
+.tabHolder:hover {
+    cursor: pointer;
 }

@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-import {TabHolder, TabHolderProps} from '../TabHolder/TabHolder'
+import { TabHolder, TabHolderProps } from '../TabHolder/TabHolder'
 
 import './TabsPanel.scss'
 
@@ -24,11 +24,11 @@ export const TabsPanel = ({
         <div className={'tabsHolder'} >
             {holderTabs.map(h => {
                 return <TabHolder key={h.id}
-                 id={h.id}
-                 selected={selectedId===h.id}
-                 title={h.title}
-                 onChangeTab={onChangeTab}
-                 />
+                    id={h.id}
+                    selected={selectedId === h.id}
+                    title={h.title}
+                    onChangeTab={onChangeTab}
+                />
             })}
         </div>
     )

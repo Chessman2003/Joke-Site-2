@@ -1,8 +1,21 @@
-.dogfactsWrapper{
+.status {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    margin: auto;
+    color: white;
+    background-color: rgb(51, 49, 49);
+    font-size: 20px;
 }
-.fact {
-    display: flex;
-    flex-direction: column;
+
+
+.image {
+    width: 500px;
+    height: 500px;
+    margin-left: 500px;
+    margin-top: 20px;
 }

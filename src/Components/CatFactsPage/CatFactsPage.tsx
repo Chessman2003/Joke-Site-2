@@ -11,9 +11,9 @@ export const CatFactsPage = ({
     nextFact
 }: Props) => {
     return (
-        <>
-            <div>{nextFact.fact}</div> 
-            <div>{nextFact.length}</div>
-        </>
+        <div className="cats">
+            <div className="fact">Следующий факт: {nextFact.fact}</div>
+            <div className="fact">Длина: {nextFact.length}</div>
+        </div>
     )
 }

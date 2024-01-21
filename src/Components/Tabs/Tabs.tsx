@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
 import { TabsPanel } from '../TabsPanel/TabsPanel';
 import { TabContent } from '../TabContent/TabContent';
-
-import {TabHolderProps} from '../TabHolder/TabHolder'
+import { TabHolderProps } from '../TabHolder/TabHolder'
 
 import './Tabs.scss';
 
@@ -36,19 +34,19 @@ export const Tabs = ({
         );
     }
 
-    return(
+    return (
         <div className="tabs">
-            <TabsPanel 
-                holderTabs={holderTabs.map(h=>{
-                        return {
-                            ...h, 
-                            getContent
-                        }
-                    })
+            <TabsPanel
+                holderTabs={holderTabs.map(h => {
+                    return {
+                        ...h,
+                        getContent
+                    }
+                })
                 }
                 onSelectedTab={onChangeTab}
-             />
+            />
             <TabContent id={selectedTab} getContent={getContent} />
-        </div>  
+        </div>
     );
 };

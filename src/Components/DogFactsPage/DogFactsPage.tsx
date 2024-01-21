@@ -8,15 +8,15 @@ type Props = {
     nextFact: DogFactsType
 }
 
-export const DogFactsPage = ({nextFact}: Props) => {
-    return (       
-            <>
-                <div>{nextFact.status}</div>
-                <div>
-                    {
-                        nextFact.message && <img src={nextFact.message.toString()}/>
-                    }
-                </div>
-            </>
+export const DogFactsPage = ({ nextFact }: Props) => {
+    return (
+        <>
+            <div className='status'>Статус: {nextFact.status}</div>
+            <div>
+                {
+                    nextFact.message && <img className='image' src={nextFact.message.toString()} />
+                }
+            </div>
+        </>
     )
 }

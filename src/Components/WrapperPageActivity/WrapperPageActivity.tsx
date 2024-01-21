@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { ControlPanel } from '../ControlPanel/ControlPanel';
 import { Button } from '../Button/Button';
 import { BoredActivityPage } from '../BoredActivityPage/BoredActivityPage';
@@ -8,12 +8,12 @@ import { PartBoredActivityType } from '../lib/types/boredActivityType';
 import { getPartBoredActivity } from '../lib/getPartBoredActivity';
 
 export const WrapperPageActivity = () => {
-    const [activityItem, setActivityItem] = useState<PartBoredActivityType>({ 
+    const [activityItem, setActivityItem] = useState<PartBoredActivityType>({
         activity: "",
         key: ""
     })
 
-    
+
     const loadNextObject = async () => {
         const item = await getPartBoredActivity('https://www.boredapi.com/api/activity');
         setActivityItem(item);
@@ -24,14 +24,16 @@ export const WrapperPageActivity = () => {
     }, [])
 
     return (
-        <>
-        <ControlPanel>
-            <Button onClick={()=>{loadNextObject()}} text='Следующая активность' />
-        </ControlPanel>
+        <div>
+            <ControlPanel>
+                <Button onClick={() => { loadNextObject() }} text='Следующая активность' />
+            </ControlPanel>
 
-        <DisplayComponent isLoading={false}>
-            <BoredActivityPage activityItem={activityItem} />
-        </DisplayComponent>
-        </>
+            <div>
+                <DisplayComponent isLoading={false}>
+                    <BoredActivityPage activityItem={activityItem} />
+                </DisplayComponent>
+            </div>
+        </div>
     )
 }

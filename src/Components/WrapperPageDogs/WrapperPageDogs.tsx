@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { ControlPanel } from '../ControlPanel/ControlPanel';
 import { Button } from '../Button/Button';
 import { DogFactsPage } from '../DogFactsPage/DogFactsPage';
@@ -19,7 +19,7 @@ export const WrapperPageDogs = () => {
 
     const getNextFact = async () => {
         const nextFact = await loader.getNextFact().catch(e => {
-            setError(e+'');
+            setError(e + '');
         });
         console.log(JSON.stringify(nextFact));
         if (nextFact) {
@@ -27,7 +27,7 @@ export const WrapperPageDogs = () => {
         }
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         getNextFact()
     }, []);
 
@@ -37,18 +37,18 @@ export const WrapperPageDogs = () => {
                 {error}
             </div>
         );
-     }
+    }
 
     return (
         <>
-        <ControlPanel>
-            <Button onClick={()=>{getNextFact()}} text='Следующая активность' />
-            <Button text='Какая-то кнопка' onClick={()=>{}} />
-        </ControlPanel>
+            <ControlPanel>
+                <Button onClick={() => { getNextFact() }} text='Следующая активность' />
+                <Button text='Какая-то кнопка' onClick={() => { }} />
+            </ControlPanel>
 
-        <DisplayComponent isLoading={false}>
-            <DogFactsPage nextFact={nextFact} />
-        </DisplayComponent>
+            <DisplayComponent isLoading={false}>
+                <DogFactsPage nextFact={nextFact} />
+            </DisplayComponent>
         </>
     )
 }

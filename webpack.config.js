@@ -16,9 +16,9 @@ const plugins = [
     }),
 ];
 
-if (process.env.SERVE) { 
+if (process.env.SERVE) {
     plugins.push(new ReactRefreshWebpackPlugin());
-  }
+}
 
 module.exports = {
     mode,
@@ -41,9 +41,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/, 
+                test: /\.tsx?$/,
                 exclude: /node_modules/,
-                use: 'ts-loader' 
+                use: 'ts-loader'
             },
             {
                 test: /\.(js|jsx)$/,

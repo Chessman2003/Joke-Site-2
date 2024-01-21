@@ -1,10 +1,9 @@
 import React from "react";
 
-import {EmulateData} from '../../model/emulateData';
 
 type Props = {
     id: string
-    
+
     getContent: (id: string) => JSX.Element
 }
 

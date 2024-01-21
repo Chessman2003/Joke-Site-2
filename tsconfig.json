@@ -17,7 +17,8 @@
         "resolveJsonModule": true
     },
     "include": [
-        "src"
+        "src",
+        "src/index.tsx"
     ],
     "exclude": [
         "node_modules"
